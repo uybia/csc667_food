@@ -8,6 +8,11 @@ group :development do
   gem 'sqlite3', '1.3.8'
 end
 
+
+group :production do
+  gem 'pg'
+end
+
 gem 'sass-rails', '4.0.0'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.0'
@@ -30,3 +35,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bootstrap-sass', '~>2.3.2.2'
+
