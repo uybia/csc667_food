@@ -1,5 +1,6 @@
-
-Food ID : <%= meal.food_id %> <br>
+<% meal.foods.each do |food| %>
+  <%= food.name %>
+Food ID : <%= meal.food_id %><br>
 Ate on : <%= meal.date %> <br>
 For: <%= meal.meal_tag %> <br><br>
-
+<% end %>

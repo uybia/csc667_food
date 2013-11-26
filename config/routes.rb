@@ -2,15 +2,16 @@ Csc667::Application.routes.draw do
   get "users/new"
   
   root to: "pages#home"
-  
+ 
   resources :users
+
   resources :sessions, only: [:new, :create, :destroy]
   
   match '/signup',  	to: 'users#new',            	via: 'get'
   match '/help',  	to: 'pages#help',		via: 'get'
   match '/signin', 	to: 'sessions#new',     	via: 'get'
   match '/signout', 	to: 'sessions#destroy',     	via: 'delete'
-  match '/meal/plan', 	to: 'meal#create', 		via: 'get'
+  match '/meal/plan', 	to: 'meals#index', 		via: 'get'
   match '/food/search',	to: 'food#search',	via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
@@ -68,3 +69,4 @@ Csc667::Application.routes.draw do
   #     resources :products
   #   end
 end
+
