@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107034542) do
+ActiveRecord::Schema.define(version: 20131125230004) do
 
   create_table "demos", force: true do |t|
     t.string   "item"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "foods", force: true do |t|
+    t.string   "name"
+    t.integer  "calories"
+    t.integer  "sodium"
+    t.integer  "totalfat"
+    t.integer  "saturated"
+    t.integer  "polyunsaturated"
+    t.integer  "monosaturated"
+    t.integer  "transfat"
+    t.integer  "cholesterol"
+    t.integer  "potassium"
+    t.integer  "carbs"
+    t.integer  "fiber"
+    t.integer  "sugar"
+    t.integer  "protein"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
