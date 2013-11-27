@@ -9,7 +9,6 @@
 
 <!---
 
-<%= render partial: 'meal_tabs' %>
 <ul class="nav nav-tabs">
   <li><a href="#default" data-toggle="tab">All</a><li>
   <li><a href="#breakfast" data-toggle="tab">Breakfast</a></li>
@@ -22,7 +21,6 @@
 <div class="tab-content">
   <div class="tab-pane active" id="default"> ALL HERE </div>
   <div class="tab-pane" id="breakfast"> BREAKFAST HERE 
-    <%= render 'breakfast' %>
   </div>
   <div class="tab-pane" id="lunch"> LUNCH  HERE </div>
   <div class="tab-pane" id="dinner"> DINNER  HERE </div>
@@ -32,8 +30,4 @@
 <br>
 <br>
 <br>
--->
-<% if @user.meals.any? %>
-  There are <%= @user.meals.count %> meals in the record.
-<% end %>
 -->

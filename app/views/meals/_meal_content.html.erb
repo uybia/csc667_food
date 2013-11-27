@@ -1,12 +1,109 @@
 <div class="tab-content">
   <div class="tab-pane active" id="default">
     There are <%= meals.count %> meals on record
+    <table class="table">
+      <thead>
+        <tr> 
+          <td>Meal</td> <td>Food</td>
+          <td>Calories</td><td>Fat</td>
+          <td>Carbs</td><td>Protein</td>
+          <td>Sodium</td><td>Sugar</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% meals.each do |meal| %>
+        <tr>
+          <td><%= meal.meal_tag %> </td>
+          <td><%= meal.food.name %> </td>
+          <td><%= meal.food.calories %> </td>
+          <td><%= meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs %> </td>
+          <td><%= meal.food.protein %> </td>
+          <td><%= meal.food.sodium %> </td>
+          <td><%= meal.food.sugar %> </td>
+	</tr>
+        <% end %>
+      </tbody>
+    </table> 
   </div>
 
   <div class="tab-pane" id="breakfast">
-    There are <%= breakfasts.count %> breakfast on record.
-    <% breakfasts.each do |bf| %>
-      Name : <%= bf.food.name %> <br>
-    <% end %>
+    <table class="table">
+      <thead>
+        <tr> 
+          <td>Food</td>
+          <td>Calories</td><td>Fat</td>
+          <td>Carbs</td><td>Protein</td>
+          <td>Sodium</td><td>Sugar</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% breakfasts.each do |meal| %>
+        <tr>
+          <td><%= meal.food.name %> </td>
+          <td><%= meal.food.calories %> </td>
+          <td><%= meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs %> </td>
+          <td><%= meal.food.protein %> </td>
+          <td><%= meal.food.sodium %> </td>
+          <td><%= meal.food.sugar %> </td>
+	</tr>
+        <% end %>
+      </tbody>
+    </table> 
   </div>
-</div>
+
+
+  <div class="tab-pane" id="lunch">
+    <table class="table">
+      <thead>
+        <tr> 
+          <td>Food</td>
+          <td>Calories</td><td>Fat</td>
+          <td>Carbs</td><td>Protein</td>
+          <td>Sodium</td><td>Sugar</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% lunches.each do |meal| %>
+        <tr>
+          <td><%= meal.food.name %> </td>
+          <td><%= meal.food.calories %> </td>
+          <td><%= meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs %> </td>
+          <td><%= meal.food.protein %> </td>
+          <td><%= meal.food.sodium %> </td>
+          <td><%= meal.food.sugar %> </td>
+	</tr>
+        <% end %>
+      </tbody>
+    </table> 
+  </div>
+
+
+  <div class="tab-pane" id="dinner">
+    <table class="table">
+      <thead>
+        <tr> 
+          <td>Food</td>
+          <td>Calories</td><td>Fat</td>
+          <td>Carbs</td><td>Protein</td>
+          <td>Sodium</td><td>Sugar</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% dinners.each do |meal| %>
+        <tr>
+          <td><%= meal.food.name %> </td>
+          <td><%= meal.food.calories %> </td>
+          <td><%= meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs %> </td>
+          <td><%= meal.food.protein %> </td>
+          <td><%= meal.food.sodium %> </td>
+          <td><%= meal.food.sugar %> </td>
+	</tr>
+        <% end %>
+      </tbody>
+    </table> 
+  </div>
+</div> <!-- end .tab-content -->

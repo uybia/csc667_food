@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :meals
+  has_many :foods, through: :meals
 
   before_save { self.email = email.downcase }
   validates :name, presence: true
