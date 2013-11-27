@@ -14,4 +14,7 @@ class FoodController < ApplicationController
     @results = Food.where('name LIKE ?', dbq)
   end
 
+  def info
+    @item = Food.find_by_id(params[:id])
+  end
 end

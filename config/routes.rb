@@ -12,12 +12,12 @@ Csc667::Application.routes.draw do
   match '/signin', 	to: 'sessions#new',     	via: 'get'
   match '/signout', 	to: 'sessions#destroy',     	via: 'delete'
   match '/meal/plan', 	to: 'meals#index', 		via: 'get'
-  match '/meal/plan/type', 	to: 'meals#meal_type', 		via: 'get'
-  match '/food/search',	to: 'food#search',	via: 'get'
-  match '/food/search/results', to: 'food#db_search', via: 'post'
-  match '/food/search/results', to: 'food#results', via: 'get'
+  match '/meal/plan/type', 	to: 'meals#meal_type', 	via: 'get'
+  match '/food/search',		to: 'food#search',	via: 'get'
+  match '/food/search/results', to: 'food#db_search', 	via: 'post'
+  match '/food/search/results', to: 'food#results', 	via: 'get'
+  match '/food/nutritional/', to: 'food#info', 	via: 'get'  
 
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
