@@ -17,4 +17,7 @@ class FoodController < ApplicationController
   def info
     @item = Food.find_by_id(params[:id])
   end
+ 
+  def add_to_meal
+  end
 end

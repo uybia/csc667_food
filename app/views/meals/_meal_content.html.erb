@@ -1,6 +1,7 @@
 <div class="tab-content">
   <div class="tab-pane active" id="default">
     There are <%= meals.count %> meals on record
+    <%= link_to "Add Food",  meal_add_food_path(:uid => user.id) %>
     <table class="table">
       <thead>
         <tr> 

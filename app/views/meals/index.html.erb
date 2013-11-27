@@ -5,7 +5,7 @@
   <li><a href="#dinner" data-toggle="tab">Dinner</a></li>
 </ul>
 
-<%= render partial: 'meal_content', locals: { meals: @meals, breakfasts: @breakfasts, lunches: @lunches, dinners: @dinners} %>
+<%= render partial: 'meal_content', locals: {user: @user, meals: @meals, breakfasts: @breakfasts, lunches: @lunches, dinners: @dinners} %>
 
 <!---
 
