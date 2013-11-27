@@ -19,5 +19,9 @@ class FoodController < ApplicationController
   end
  
   def add_to_meal
+    meals = Meal.where('user_id = ?', params[:uid])
+    if params[:meal] == "all" then
+      @recent = meals.order("date DESC").take(5)
+    end
   end
 end

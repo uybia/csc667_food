@@ -13,5 +13,11 @@
   <li><a href="#frequent" data-toggle="tab">Frequent</a></li>
   <li><a href="#allmeals" data-toggle="tab">All Meals</a></li>
 </ul>
-<%= render partial: 'user_meal_add' %>
+
+<br><strong> Top Recent Food </strong>
+<% @recent.each do |r| %>
+<%= r.food.name %><br>
+<% end %>
+
+<%= render partial: 'user_meal_add'  %>
 </div>
