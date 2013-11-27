@@ -9,6 +9,4 @@ class CreateMeals < ActiveRecord::Migration
       t.timestamps
     end
   end
-
-  add_index :meals, [:user_id]
 end
