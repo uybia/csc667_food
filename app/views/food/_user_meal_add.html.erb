@@ -1,14 +1,26 @@
 <div class="tab-content">
   <div class="tab-pane active" id="recent">
-    LAST 5 RECENT FOOD
+   <% recent.each do |item| %>
+   <%= item.food.name %> </br>
+   <% end %> 
   </div>
 
   <div class="tab-pane" id="frequent">
-    TOP 5 FREQUENT FOOD
+   <% frequent.each do |item| %>
+   <%= item.food.name %> </br>
+   <% end %> 
   </div>
 
   <div class="tab-pane" id="allmeals">
-   TOP 5 FREQUENT FOOD FROM ALL MEALS
+   <% if params[:meal] == "all" then %>
+     <% frequent.each do |item| %>
+       <%= item.food.name %> </br>
+     <% end
+      else 
+        allmeal.each do |item| %>
+         <%= item.food.name %> </br>
+        <% end %>
+     <% end %>
   </div>
 
 </div> <!-- end .tab-content -->
