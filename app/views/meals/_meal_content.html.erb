@@ -5,9 +5,9 @@
       <thead>
         <tr> 
           <td>Meal</td> <td>Food</td>
-          <td>Calories</td><td>Fat</td>
-          <td>Carbs</td><td>Protein</td>
-          <td>Sodium</td><td>Sugar</td>
+          <td>Calories</td><td>Fat (g)</td>
+          <td>Carbs (g)</td><td>Protein (g)</td>
+          <td>Sodium (mg)</td><td>Sugar (g)</td>
         </tr>
       </thead>
       <tbody>
@@ -15,12 +15,12 @@
         <tr>
           <td><%= meal.meal_tag %> </td>
           <td><%= meal.food.name %> </td>
-          <td><%= meal.food.calories %> </td>
-          <td><%= meal.food.totalfat %> </td>
-          <td><%= meal.food.carbs %> </td>
-          <td><%= meal.food.protein %> </td>
-          <td><%= meal.food.sodium %> </td>
-          <td><%= meal.food.sugar %> </td>
+          <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
+          <td><%= meal.food.totalfat == nil ? '0' : meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs == nil ? '0' : meal.food.carbs %> </td>
+          <td><%= meal.food.protein == nil ? '0' : meal.food.protein %> </td>
+          <td><%= meal.food.sodium == nil ? '0' : meal.food.sodium %> </td>
+          <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
       </tbody>
@@ -32,21 +32,21 @@
       <thead>
         <tr> 
           <td>Food</td>
-          <td>Calories</td><td>Fat</td>
-          <td>Carbs</td><td>Protein</td>
-          <td>Sodium</td><td>Sugar</td>
+          <td>Calories</td><td>Fat (g)</td>
+          <td>Carbs (g)</td><td>Protein (g)</td>
+          <td>Sodium (mg)</td><td>Sugar (g)</td>
         </tr>
       </thead>
       <tbody>
         <% breakfasts.each do |meal| %>
         <tr>
           <td><%= meal.food.name %> </td>
-          <td><%= meal.food.calories %> </td>
-          <td><%= meal.food.totalfat %> </td>
-          <td><%= meal.food.carbs %> </td>
-          <td><%= meal.food.protein %> </td>
-          <td><%= meal.food.sodium %> </td>
-          <td><%= meal.food.sugar %> </td>
+          <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
+          <td><%= meal.food.totalfat == nil ? '0' : meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs == nil ? '0' : meal.food.carbs %> </td>
+          <td><%= meal.food.protein == nil ? '0' : meal.food.protein %> </td>
+          <td><%= meal.food.sodium == nil ? '0' : meal.food.sodium %> </td>
+          <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
       </tbody>
@@ -59,21 +59,21 @@
       <thead>
         <tr> 
           <td>Food</td>
-          <td>Calories</td><td>Fat</td>
-          <td>Carbs</td><td>Protein</td>
-          <td>Sodium</td><td>Sugar</td>
+          <td>Calories</td><td>Fat (g)</td>
+          <td>Carbs (g)</td><td>Protein (g)</td>
+          <td>Sodium (mg)</td><td>Sugar (g)</td>
         </tr>
       </thead>
       <tbody>
         <% lunches.each do |meal| %>
         <tr>
           <td><%= meal.food.name %> </td>
-          <td><%= meal.food.calories %> </td>
-          <td><%= meal.food.totalfat %> </td>
-          <td><%= meal.food.carbs %> </td>
-          <td><%= meal.food.protein %> </td>
-          <td><%= meal.food.sodium %> </td>
-          <td><%= meal.food.sugar %> </td>
+          <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
+          <td><%= meal.food.totalfat == nil ? '0' : meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs == nil ? '0' : meal.food.carbs %> </td>
+          <td><%= meal.food.protein == nil ? '0' : meal.food.protein %> </td>
+          <td><%= meal.food.sodium == nil ? '0' : meal.food.sodium %> </td>
+          <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
       </tbody>
@@ -86,21 +86,21 @@
       <thead>
         <tr> 
           <td>Food</td>
-          <td>Calories</td><td>Fat</td>
-          <td>Carbs</td><td>Protein</td>
-          <td>Sodium</td><td>Sugar</td>
+          <td>Calories</td><td>Fat (g)</td>
+          <td>Carbs (g)</td><td>Protein (g)</td>
+          <td>Sodium (mg)</td><td>Sugar (g)</td>
         </tr>
       </thead>
       <tbody>
         <% dinners.each do |meal| %>
         <tr>
           <td><%= meal.food.name %> </td>
-          <td><%= meal.food.calories %> </td>
-          <td><%= meal.food.totalfat %> </td>
-          <td><%= meal.food.carbs %> </td>
-          <td><%= meal.food.protein %> </td>
-          <td><%= meal.food.sodium %> </td>
-          <td><%= meal.food.sugar %> </td>
+          <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
+          <td><%= meal.food.totalfat == nil ? '0' : meal.food.totalfat %> </td>
+          <td><%= meal.food.carbs == nil ? '0' : meal.food.carbs %> </td>
+          <td><%= meal.food.protein == nil ? '0' : meal.food.protein %> </td>
+          <td><%= meal.food.sodium == nil ? '0' : meal.food.sodium %> </td>
+          <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
       </tbody>
