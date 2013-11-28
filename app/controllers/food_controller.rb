@@ -2,10 +2,7 @@ class FoodController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def db_search
-    query = params[:food_item].gsub(' ', '%')
-    query.insert(0, '%')
-    query.insert(query.length, '%')
-    flash[:query] = query
+    flash[:query] = search(params[:food_item])
     redirect_to food_search_results_path
   end
 
@@ -25,9 +22,9 @@ class FoodController < ApplicationController
       fq = specific.group('food_id').count('food_id')
       fq = fq.keys.take(5)
       @frequent = specific.where(:food_id => fq)
-      fq = meals.group('food_id').count('food_id')
-      fq = fq.keys.take(10)
-      @all = meals.distinct.where(:food_id => fq)
+      aq = meals.group('food_id').count('food_id')
+      aq = aq.keys.take(10)
+      @all = meals.distinct.where(:food_id => aq).take(10)
   end
   
   def add_item
@@ -42,4 +39,19 @@ class FoodController < ApplicationController
     redirect_to meal_plan_path
   end
   
+  def addmodal
+    @item = Food.find_by_id(params[:id])
+  end
+
+  def item_search
+    query = search(params[:food_item])
+    @results = Food.where('name LIKE ?', query)
+  end
+
+private
+  def search(query)
+    query.gsub(' ', '%')
+    query.insert(0, '%')
+    query.insert(query.length, '%')
+  end  
 end
