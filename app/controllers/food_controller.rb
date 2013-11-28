@@ -36,4 +36,8 @@ class FoodController < ApplicationController
       @all = meals.distinct.where(:food_id => fq)
     end
   end
+  
+  def add_food_modal
+  
+  end
 end

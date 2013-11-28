@@ -1,26 +1,66 @@
 <div class="tab-content">
   <div class="tab-pane active" id="recent">
+   <form class="add-food" action="/food/add">
    <% recent.each do |item| %>
-   <%= item.food.name %> </br>
-   <% end %> 
+     <div class="radio">
+       <label>
+       <input type="radio" name="food-item" value=<%= item.food.id %>>
+       <%= item.food.name %> </br>
+       </label>
+     </div>
+   <% end %>
+         <%= button_to "Save",  :class => "btn btn-default" %>
+   </form> 
   </div>
 
   <div class="tab-pane" id="frequent">
+   <form>
    <% frequent.each do |item| %>
-   <%= item.food.name %> </br>
-   <% end %> 
+     <div class="radio">
+       <label>
+       <input type="radio" name="food-item" value=<%= item.food.id %>>
+       <%= item.food.name %> </br>
+       </label>
+     </div>
+   <% end %>
+     <button class="btn btn-default pull-right" data-toggle="modal" data-target="#post_meal">Save</button>
+   </form> 
   </div>
 
   <div class="tab-pane" id="allmeals">
    <% if params[:meal] == "all" then %>
+     <form class="add-food">
      <% frequent.each do |item| %>
-       <%= item.food.name %> </br>
-     <% end
-      else 
-        allmeal.each do |item| %>
-         <%= item.food.name %> </br>
+       <div class="radio">
+         <label>
+           <input type="radio" name="food-item" value=<%= item.food.id %>>
+           <%= item.food.name %> </br>
+         </label>
+       </div>
+     <% end %>
+         <%= button_to "Save", food_add_path, :class => "btn btn-default", :method => :get %>
+     </form>
+     <%  else %>
+       <form class="add-food"> 
+        <% allmeal.each do |item| %>
+          <div class="radio">
+             <label>
+             <input type="radio" name="food-item" value=<%= item.food.id %>>
+               <%= item.food.name %> </br>
+             </label>
+          </div>
         <% end %>
+         <%= button_to "Save", food_add_path, :class => "btn btn-default", :method => :get%>
+      </form>
      <% end %>
   </div>
-
 </div> <!-- end .tab-content -->
+
+<!--
+<div class="modal fade" id="post_meal" tabindex="-1" role-"dialog" aria-labelledby="mealModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"
+-->

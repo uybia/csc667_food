@@ -2,11 +2,17 @@ class MealsController < ApplicationController
   before_action :signed_in_user
 
   def index
+    if params[:date].present? 
+       date = params[:date]
+    else
+       date = Time.now.strftime("%F")
+    end
     @user = User.find_by(params[:id]) 
-    @meals = @user.meals
+    @meals = @user.meals.where('date = ? ', date )
     @breakfasts = @meals.where(meal_tag: "breakfast").group("meal_tag")
     @lunches = @meals.where(meal_tag: "lunch")
-    @dinners = @meals.where(meal_tag: "dinner")
+    @dinners = @meals.where(meal_tag: "dinner") 
+    @date =  Date.parse(date)
   end
 
   def meal_type
