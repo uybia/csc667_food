@@ -1,7 +1,11 @@
 <div class="tab-content">
   <div class="tab-pane active" id="default">
     There are <%= meals.count %> meals on record
-    <%= link_to "Add Food",  meal_add_food_path(:uid => user.id, :meal => "all") %>
+    Add Food to:
+        <%= link_to "Breakfast",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")) %>
+        <%= link_to "Lunch",  meal_add_food_path(:meal => "lunch", :d => @date.strftime("%Y%m%d")) %>
+        <%= link_to "Dinner",  meal_add_food_path(:meal => "dinner", :d => @date.strftime("%Y%m%d")) %>
+
     <table class="table">
       <thead>
         <tr> 

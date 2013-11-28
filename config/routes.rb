@@ -17,7 +17,7 @@ Csc667::Application.routes.draw do
   match '/food/search/results', to: 'food#db_search', 	via: 'post'
   match '/food/search/results', to: 'food#results', 	via: 'get'
   match '/food/nutritional/', to: 'food#info', 	via: 'get'  
-  match '/food/add_item',  to: 'food#add_item', via: 'post'
+  match '/meal/food/add_item',  to: 'food#add_item', via: 'post'
   match '/meal/add_food', to: 'food#add_to_meal', via: 'get'
 
 

@@ -19,25 +19,27 @@ class FoodController < ApplicationController
   end
  
   def add_to_meal
-    meals = Meal.where('user_id = ?', params[:uid])
-    if params[:meal] == "all" then
-      @recent = meals.order("date DESC").take(5)
-      fq = meals.group('food_id').count('food_id')
-      fq = fq.keys.take(5)
-      @frequent = meals.distinct.where(:food_id => fq)
-    else
+    meals = Meal.where('user_id = ?', current_user.id)
       specific = meals.where('meal_tag = ?', params[:meal])
       @recent = specific.order("date DESC").take(5)
       fq = specific.group('food_id').count('food_id')
       fq = fq.keys.take(5)
-      @frequent = meals.distinct.where(:food_id => fq)
+      @frequent = specific.where(:food_id => fq)
       fq = meals.group('food_id').count('food_id')
-      fq = fq.keys.take(5)
+      fq = fq.keys.take(10)
       @all = meals.distinct.where(:food_id => fq)
-    end
   end
   
-  def add_food_modal
-  
+  def add_item
+    date = Date.parse(params[:d]).strftime("%F")
+    item = Meal.new
+    item.user_id = current_user.id
+    item.food_id = params[:food_item]
+    item.meal_tag = params[:meal]
+    item.date = date
+    item.save
+
+    redirect_to meal_plan_path
   end
+  
 end
