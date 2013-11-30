@@ -13,6 +13,7 @@ class MealsController < ApplicationController
     @lunches = @meals.where(meal_tag: "lunch")
     @dinners = @meals.where(meal_tag: "dinner") 
     @date =  Date.parse(date)
+    @calories = @user.goal.calories
   end
 
   def meal_type

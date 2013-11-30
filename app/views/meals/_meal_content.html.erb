@@ -16,8 +16,10 @@
         </tr>
       </thead>
       <tbody>
+        <% @@total = 0 %>
         <% meals.each do |meal| %>
         <tr>
+ 	  <%if !meal.food.calories.nil? then @@total += meal.food.calories end	 %>
           <td><%= meal.meal_tag %> </td>
           <td><%= meal.food.name %> </td>
           <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
@@ -28,6 +30,14 @@
           <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
+        <tr>
+          <td> <b> Total: </b></td>
+          <td> <%= @@total %> </td>
+        </tr>
+        <tr>
+          <td> <strong>Remaining</strong></td>
+          <td> <%= @user.goal.calories - @@total %> </td>
+        </tr>
       </tbody>
     </table> 
   </div>
