@@ -9,9 +9,4 @@ class FriendshipsController < ApplicationController
       redirect_to users_path(current_user.id)
     end
   end
-
-  def index
-    @users = User.where('id <> ?', current_user.id)
-    @friends = current_user.friends
-  end
 end

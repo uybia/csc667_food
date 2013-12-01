@@ -5,6 +5,7 @@ Csc667::Application.routes.draw do
  
   resources :users
   resources :friendships, only: [:create]
+  resources :calendar 
 
   resources :sessions, only: [:new, :create, :destroy]
   
