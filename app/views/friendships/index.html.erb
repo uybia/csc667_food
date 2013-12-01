@@ -2,7 +2,11 @@
   <div>
    <p>
     <strong><%= user.name %></strong>
-    <%= link_to "Add Friend", friendship_path(:friend_id => user), :method => :post %>
+    <% if @friends.exists?(:friend_id => user.id) == nil %>
+      (Friends)
+    <% else %>
+    <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+    <% end %>
    </p>
   </div>
 <% end %>

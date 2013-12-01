@@ -4,6 +4,7 @@ Csc667::Application.routes.draw do
   root to: "pages#home"
  
   resources :users
+  resources :friendships, only: [:create]
 
   resources :sessions, only: [:new, :create, :destroy]
   

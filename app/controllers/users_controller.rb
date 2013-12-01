@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+   @users = User.where('id <> ?', current_user.id)
+   @friends = current_user.friends
+  end
+
   def new
     @user = User.new
   end
