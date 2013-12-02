@@ -5,12 +5,14 @@ Csc667::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  
+  resources :grocery_lists
+  resources :list_items
   match '/signup',  to: 'users#new',            via: 'get'
   match '/help',  to: 'pages#help',            via: 'get'
   match '/signin', to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
-
+  #match '/grocery_list/create', to: 'grocery_lists#create',    via: 'get'
+  #match '/grocery_list/add_to_list', to: 'list_item#add_to_list', via: 'post'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

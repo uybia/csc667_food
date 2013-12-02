@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125002900) do
+ActiveRecord::Schema.define(version: 20131201234513) do
+
+  create_table "grocery_lists", force: true do |t|
+    t.integer  "user_id"
+    t.string   "list_id"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "list_items", force: true do |t|
+    t.string   "food_id"
+    t.integer  "quantity"
+    t.string   "type"
+    t.integer  "list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lists", force: true do |t|
+    t.string   "content"
+    t.integer  "quantity"
+    t.string   "type"
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lists", ["user_id", "created_at"], name: "index_lists_on_user_id_and_created_at"
 
   create_table "test_tables", force: true do |t|
     t.datetime "created_at"
