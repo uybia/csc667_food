@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130074551) do
+ActiveRecord::Schema.define(version: 20131201234513) do
 
   create_table "demos", force: true do |t|
     t.string   "item"
@@ -48,18 +48,9 @@ ActiveRecord::Schema.define(version: 20131130074551) do
   create_table "friendships", force: true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
-
-ActiveRecord::Schema.define(version: 20131201234513) do
-
-  create_table "grocery_lists", force: true do |t|
-    t.integer  "user_id"
-    t.string   "list_id"
-    t.date     "date"
-
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "goals", force: true do |t|
     t.integer  "calories"
@@ -69,11 +60,10 @@ ActiveRecord::Schema.define(version: 20131201234513) do
     t.integer  "user_id"
   end
 
-  create_table "meals", force: true do |t|
+  create_table "grocery_lists", force: true do |t|
     t.integer  "user_id"
-    t.integer  "food_id"
+    t.string   "list_id"
     t.date     "date"
-    t.string   "meal_tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,17 +77,14 @@ ActiveRecord::Schema.define(version: 20131201234513) do
     t.datetime "updated_at"
   end
 
-  create_table "lists", force: true do |t|
-    t.string   "content"
-    t.integer  "quantity"
-    t.string   "type"
-    t.date     "date"
+  create_table "meals", force: true do |t|
     t.integer  "user_id"
+    t.integer  "food_id"
+    t.date     "date"
+    t.string   "meal_tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "lists", ["user_id", "created_at"], name: "index_lists_on_user_id_and_created_at"
 
   create_table "test_tables", force: true do |t|
     t.datetime "created_at"
