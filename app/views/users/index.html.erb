@@ -1,13 +1,9 @@
-<% for user in @users %>
-  <div>
-   <p>
-    <strong>
-    <%= user.name %></strong>
-    <% if !@friends.exists?(user.id) then %>
-    <%= link_to "Add Friend", friendships_path(:friend_id => user.id), :method => :post %>
-    <% else %>
-       (Friends)
-    <% end %>
-   </p>
-  </div>
-<% end %>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <ul class="users">
+  <%= render @users %>
+</ul>
+</ul>
+

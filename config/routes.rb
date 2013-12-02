@@ -4,10 +4,21 @@ Csc667::Application.routes.draw do
   root to: "pages#home"
  
   resources :users
+
   resources :friendships, only: [:create]
   resources :calendar 
 
+
+
   resources :sessions, only: [:new, :create, :destroy]
+  resources :grocery_lists
+  resources :list_items
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/help',  to: 'pages#help',            via: 'get'
+  match '/signin', to: 'sessions#new',     via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+
   
   match '/signup',  	to: 'users#new',            	via: 'get'
   match '/help',  	to: 'pages#help',		via: 'get'
