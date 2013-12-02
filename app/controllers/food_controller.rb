@@ -2,12 +2,14 @@ class FoodController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def db_search
-    flash[:query] = search(params[:food_item])
-    redirect_to food_search_results_path
+    #flash[:query] = search(params[:food_item])
+    query = search(params[:food_item])
+    redirect_to food_search_results_path(:query => query)
   end
 
   def results
-    dbq = flash[:query]
+    #dbq = flash[:query]
+    dbq = params[:query]
     @results = Food.where('name LIKE ?', dbq)
   end
 
