@@ -1,32 +1,5 @@
-<% content_for (:head) do %>
-<%= javascript_include_tag 'calendar' %>
-<% end %>
 
-
-<div class="alert alert-warning">
-  <strong> Oh no! </strong> You need to enter an event <strong>and</strong> description
-</div>
-
-<form role="form">
-  <div class="form-group">
-    <label for="event_desc">Event:</label>
-    <input type="text" class="form-control" id="event_description" placeholder="Enter event">
-  </div>
-  <select id="time" class="form-control">
-    <option selected="selected" value="">Select time ..</option>
-    <option value="12 AM">12 AM</option>
-    <% for $time in 1 ... 12 %>
-    <option value="<%= $time %> AM"> <%= $time %> AM </option>
-    <% end %>
-    <option value="12 PM">12 PM</option>
-    <% for $time in 1 ... 12 %>
-    <option value="<%= $time %> PM"> <%= $time %> PM </option>
-    <% end %>
-  </select>
-</form>
-
-
-<table class="table table-bordered">
+<table class="calendar table table-bordered">
  <thead>
   <tr> 
     <td> <a id="prev_year"><<</a> </td>

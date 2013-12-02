@@ -1,7 +1,6 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-###
 starting = new Date()
 current = new Date()
 days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -127,7 +126,7 @@ insert_event = (cell) ->
    form_event = $('form #event_description').val()
    form_time = $('form #time').val()
    $(cell).append(" <div class=\"event_cal\">#{form_time}: #{form_event}</div>")
-   $.post("/appointment", {"appointment": {"event": form_event, "time": form_time, "month": current.getMonth(), "day": $(cell).data('day'), "year": current.getFullYear()}})
+##   $.post("/appointment", {"appointment": {"event": form_event, "time": form_time, "month": current.getMonth(), "day": $(cell).data('day'), "year": current.getFullYear()}})
 
 clear_form = ->
    $('form #time option:first').prop('selected', 'disabled')
@@ -143,4 +142,3 @@ get_event = ->
          $("td[data-day ='" + value.day + "']").append("<div class=\"event_cal\"> #{value.time} : #{value.event} </div>")
       )
    ))
-###
