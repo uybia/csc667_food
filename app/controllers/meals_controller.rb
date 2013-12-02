@@ -7,7 +7,7 @@ class MealsController < ApplicationController
     else
        date = Time.now.strftime("%F")
     end
-    @user = User.find(current_user.id) 
+    @user = User.find_by_user_id(current_user.id) 
     @meals = @user.meals.where('date = ? ', date )
     @breakfasts = @meals.where(meal_tag: "breakfast").group("meal_tag")
     @lunches = @meals.where(meal_tag: "lunch")
