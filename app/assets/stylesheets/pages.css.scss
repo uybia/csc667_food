@@ -1,3 +1,20 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#gradient{
+  min-height: 100px;
+  margin-top: -30px;
+  width: 100%;
+  background: #a4f79e;
+background: -moz-linear-gradient(top,  #a4f79e 0%, #89b32e 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4f79e), color-stop(100%,#89b32e));
+background: -webkit-linear-gradient(top,  #a4f79e 0%,#89b32e 100%);
+background: -o-linear-gradient(top,  #a4f79e 0%,#89b32e 100%);
+background: -ms-linear-gradient(top,  #a4f79e 0%,#89b32e 100%);
+background: linear-gradient(to bottom,  #a4f79e 0%,#89b32e 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4f79e', endColorstr='#89b32e',GradientType=0 );
+}
+
+#main-carousel {
+  margin: 0 auto;
+  width: 50%;
+}
