@@ -15,15 +15,15 @@
              </ul>
              <% end  end%>
            <h5>Lunch</h5>
-           <% if @breakfasts != nil then %>
+           <% if @lunches != nil then %>
            <% @lunches.each do |meal| %>
            <ul><li> <%= meal.food.name %> </li></ul>
            <% end end %>
            <h5>Dinner</h5>
-           <% if @breakfasts != nil then %>
+           <% if @dinners != nil then %>
            <% @dinners.each do |meal| %>
            <ul><li> <%= meal.food.name %> </li></ul>
-           <% end end` %>
+           <% end end %>
        </div>
     </div>
 </div>
