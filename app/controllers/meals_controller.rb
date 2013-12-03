@@ -20,6 +20,13 @@ class MealsController < ApplicationController
     @meals = @user.meals.find_by_meal_tag(params[:meal])
   end
 
+  def destroy
+    meal = Meal.find_by_id(params[:id])
+    meal.destroy
+
+    redirect_to meal_plan_path
+  end
+
   def signed_in_user 
     redirect_to food_search_url unless signed_in?
   end

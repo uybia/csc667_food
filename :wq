@@ -30,7 +30,7 @@ Csc667::Application.routes.draw do
   match '/food/add_through_modal', to: 'food#addmodal', via: 'get'
   match '/meal/food/add_item',  to: 'food#add_item', via: 'post'
   match '/meal/add_food', to: 'food#add_to_meal', via: 'get'
-  match '/meal/delete', to: 'meals#destroy', via: 'delete'
+  match '/meal', to: 'meals#destroy', via: 'delete'
   match '/meal/food/search/results', to: 'food#item_search', via: 'post'
   match '/meal/food/search/results', to: 'food#item_search', via: 'get'
   match '/calendar', to: 'calendar#index', via: 'get'
