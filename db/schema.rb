@@ -91,12 +91,6 @@ ActiveRecord::Schema.define(version: 20131201234513) do
     t.datetime "updated_at"
   end
 
-  create_table "testings", force: true do |t|
-    t.string   "item"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"

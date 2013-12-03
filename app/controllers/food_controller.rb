@@ -10,7 +10,7 @@ class FoodController < ApplicationController
   def results
     #dbq = flash[:query]
     dbq = params[:query]
-    @results = Food.where('name ILIKE ?', dbq)
+    @results = Food.where('name LIKE ?', dbq)
   end
 
   def info
@@ -38,7 +38,7 @@ class FoodController < ApplicationController
     item.date = date
     item.save
 
-    redirect_to meal_plan_path(:date => params[:d])
+    redirect_to meal_plan_path(:date => date)
   end
   
   def addmodal
@@ -47,7 +47,7 @@ class FoodController < ApplicationController
 
   def item_search
     query = search(params[:food_item])
-    @results = Food.where('name ILIKE ?', query)
+    @results = Food.where('name LIKE ?', query)
   end
 
 private
