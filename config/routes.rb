@@ -10,13 +10,6 @@ Csc667::Application.routes.draw do
   resources :grocery_lists
   resources :list_items
   
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/help',  to: 'pages#help',            via: 'get'
-  match '/signin', to: 'sessions#new',     via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-
-
-  
   match '/signup',  	to: 'users#new',            	via: 'get'
   match '/help',  	to: 'pages#help',		via: 'get'
   match '/signin', 	to: 'sessions#new',     	via: 'get'
