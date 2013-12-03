@@ -38,7 +38,7 @@ class FoodController < ApplicationController
     item.date = date
     item.save
 
-    redirect_to meal_plan_path
+    redirect_to meal_plan_path(:date => params[:d])
   end
   
   def addmodal
