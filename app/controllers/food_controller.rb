@@ -49,8 +49,22 @@ class FoodController < ApplicationController
     query = search(params[:food_item])
     @results = Food.where('name ILIKE ?', query)
   end
+  
+  def create 
+    food = Food.create(food_params)
+
+    redirect_to food_nutritional_path(:id => food.id)
+  end
+
+  def show
+   @food = Food.new
+  end
 
 private
+  def food_params
+    params.require(:food).permit(:name, :calories, :totalfat, :saturated, :polyunsaturated, :monosaturated, :transfat, :cholesterol, :potassium, :carbs, :fiber, :sugar, :protein)
+  end
+
   def search(query)
     query.gsub(' ', '%')
     query.insert(0, '%')
