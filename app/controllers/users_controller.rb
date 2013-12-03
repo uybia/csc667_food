@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       Goal.create(:user_id => @user.id, :calories => 2000)
-      redirect_to @user
+      redirect_to  users_path(:id => @user.id)
     else
       render 'new'
     end
