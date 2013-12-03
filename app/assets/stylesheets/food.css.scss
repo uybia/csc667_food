@@ -5,10 +5,15 @@
 .search-form {
   width: 70%;
   float: left;
-  margin: auto;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 .search-db-button {
  padding-bottom: 10px;
  float: left;
+}
+
+#search-tabs {
+ clear:both;
 }

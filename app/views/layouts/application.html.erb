@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>CSC667</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -10,7 +11,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %> <!-- replaced with partial-->
-    <div class="container">
+    <div class="container content">
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
     </div>
