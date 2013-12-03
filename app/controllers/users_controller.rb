@@ -3,10 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-  def index
-    @users = User.all
-  end
-
   def show
     date = Time.now.strftime("%F")
     @user = User.find(current_user.id)
