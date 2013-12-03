@@ -10,7 +10,7 @@ class FoodController < ApplicationController
   def results
     #dbq = flash[:query]
     dbq = params[:query]
-    @results = Food.where('name LIKE ?', dbq)
+    @results = Food.where('name ILIKE ?', dbq)
   end
 
   def info
@@ -47,7 +47,7 @@ class FoodController < ApplicationController
 
   def item_search
     query = search(params[:food_item])
-    @results = Food.where('name LIKE ?', query)
+    @results = Food.where('name ILIKE ?', query)
   end
 
 private
