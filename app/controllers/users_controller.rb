@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     date = Time.now.strftime("%F")
-    user = User.find(current_user.id)
+    @user = User.find(current_user.id)
     meals = @user.meals.where('date = ? ', date ).group("id")
     @breakfasts = @meals.where(meal_tag: "breakfast").group("meal_tag")
     @lunches = @meals.where(meal_tag: "lunch")
