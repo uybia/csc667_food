@@ -1,6 +1,6 @@
 <h1> Search Results</h1>
 <div>
-   Or add your own food.
+   Or <%= link_to "add your own food", food_new_path %>
 </div>
 <ul>
 <% @results.each do |food| %>
