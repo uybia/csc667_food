@@ -6,14 +6,14 @@ class UsersController < ApplicationController
   def show
     date = Time.now.strftime("%F")
     @user = User.find(params[:id])
-    meals = @user.meals.where('date = ? ', date ).group("id")
+    @meals = @user.meals.where('date = ? ', date ).group("id")
     @breakfasts = @meals.where(meal_tag: "breakfast").group("meal_tag")
     @lunches = @meals.where(meal_tag: "lunch")
     @dinners = @meals.where(meal_tag: "dinner") 
   end
 
   def index
-   @users = User.where('id <> ?', current_user.id)
+   @users = User.where('id <> ?', params[:id])
    @friends = current_user.friends
   end
 
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      Goal.create(:user_id => user.id, :calories => 2000)
+      Goal.create(:user_id => @user.id, :calories => 2000)
       redirect_to @user
     else
       render 'new'
