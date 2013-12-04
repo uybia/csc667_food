@@ -1,16 +1,19 @@
-<h1>GroceryList</h1>
+<h1>My Grocery Lists</h1>
+<table width="40%">
 
 <% @lists.each do |list| %>
-  <li><%=link_to list.list_id, list %></li>
+<tr>
+  <td>
+    <li><%=link_to list.list_id, list %></li>
+  </td>
+  <td>
+    created on <b><%= list.date %></b> &nbsp 
+  [<%= link_to "X", list, method: :delete %>]
+  </td>
+    
+  </tr>
 <% end %>
 
+</table>
 
-<%= form_for(@list) do |f| %>
-      <!-- <%= render 'shared/error_messages', object: f.object %> -->
-      
-      <%= f.label :List_Name %>
-      <%= f.text_field :list_id %>
-
-      <%= f.submit "Create List", class: "btn btn-large btn-primary" %>
-    <% end %>
-
+<%= render partial:'grocery_list'%>

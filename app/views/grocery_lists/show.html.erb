@@ -1,4 +1,11 @@
-<h1>List: <%= @list.list_id %></h1>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $( "#datepicker" ).datepicker({dateFormat:'yy/mm/dd'});
+  });
+
+</script>
+
+<h2>List: "<%= @list.list_id %>" created on <%= @list.date %></h2>
 
 <table class="table">
   <thead>
@@ -12,8 +19,8 @@
   <% @item.each do |item| %>
   <tr>
     <td> <%= item.food_id %></td>
-    <td> <%= item.quantity %></td>
-    <td> <%= item.type %></td>
+    <td> <%= item.quantity %> <%= item.type %></td>
+    <td> [<%= link_to "X", item, method: :delete %>]</td>
     </tr>
   <% end %>
 </tbody>
@@ -23,13 +30,13 @@
       <!-- <%= render 'shared/error_messages', object: f.object %> -->
       
       <%= f.label :food %>
-      <%= f.text_field :food_id %>
+      <%= f.text_field :food_id, :style => "width:50%;" %>
       
       <%= f.label :quantity %>
-      <%= f.text_field :quantity %>
-      
-      <%= f.label :Comment %>
-      <%= f.text_field :type %>
+      <%= f.text_field :quantity, :style => "width:50%;" %>
+      <br>
+      <br>
+      <input type="text" id="datepicker" name="list_item[date]" placeholder="Change the date to" style = "width: 150px"></p>
       <input type = "hidden" name = "id" value= <%= @list.id%>/>
       <%= f.submit "Add to list", class: "btn btn-large btn-primary" %>
     <% end %>

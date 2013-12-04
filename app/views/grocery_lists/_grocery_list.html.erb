@@ -1,2 +1,15 @@
-<li><%=link_to list.list_name, list %></li>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $( "#datepicker" ).datepicker({dateFormat:'yy/mm/dd'});
+  });
+
+</script>
+<%= form_for(@list) do |f| %>
+      <!-- <%= render 'shared/error_messages', object: f.object %> -->
+      
+      Create <input id="grocery_list_list_id" name="grocery_list[list_id]" placeholder="list" type="text" style="width: 164px;" > on 
+      <input type="text" id="datepicker" name="grocery_list[date]" placeholder="date" style = "width: 100px"></p>
+     
+      <%= f.submit "Create!", class: "btn btn-medium btn-primary" %>
+    <% end %>
 
