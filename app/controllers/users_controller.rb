@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     date = Time.now.strftime("%F")
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
     meals = @user.meals.where('date = ? ', date ).group("id")
     @breakfasts = @meals.where(meal_tag: "breakfast").group("meal_tag")
     @lunches = @meals.where(meal_tag: "lunch")
@@ -34,10 +34,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       Goal.create(:user_id => user.id, :calories => 2000)
-      redirect_to root_path
+      redirect_to @user
     else
       render 'new'
     end
