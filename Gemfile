@@ -53,3 +53,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 ##
 gem 'therubyracer'
 gem 'bootstrap-sass', '~> 2.3.2.2' 
+gem 'jquery-qtip2-rails'
