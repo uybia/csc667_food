@@ -34,11 +34,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       Goal.create(:user_id => @user.id, :calories => 2000)
-      redirect_to @user
+      flash[:success] = "Successfully created account. Please sign in."
+      redirect_to signin_path 
     else
       render 'new'
     end
   end
+
 
    private
 
