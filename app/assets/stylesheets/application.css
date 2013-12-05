@@ -10,5 +10,6 @@
  *
  *= require_self
  *= jquery.qtip.css
+ *= require bootstrap-datepicker
  *= require_tree .
  */
