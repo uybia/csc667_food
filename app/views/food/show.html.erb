@@ -1,31 +1,31 @@
-<h1> Form to add a new food item </h1>
+<h1> Add a new food to the database  </h1>
 
 <%= form_for :food, :url => food_create_path do |f| %>
-  <%= f.label :name, 'Food Name' %>:
+  <%= f.label :name, 'Food Name' %>
   <%= f.text_field :name %><br>
-  <%= f.label :calories, 'Calories' %>:
+  <%= f.label :calories, 'Calories' %>
   <%= f.text_field :calories %><br>
-  <%= f.label :totalfat, 'Total Fat' %>:
+  <%= f.label :totalfat, 'Total Fat' %>
   <%= f.text_field :totalfat %><br>
-  <%= f.label :saturated, 'Saturated Fat' %>:
+  <%= f.label :saturated, 'Saturated Fat' %>
   <%= f.text_field :saturated %><br>
-  <%= f.label :polyunsaturated, 'Polyunsaturated Fat' %>:
+  <%= f.label :polyunsaturated, 'Polyunsaturated Fat' %>
   <%= f.text_field :polyunsaturated %><br>
-  <%= f.label :monosaturated, 'Monosaturated Fat' %>:
+  <%= f.label :monosaturated, 'Monosaturated Fat' %>
   <%= f.text_field :monosaturated %><br>
-  <%= f.label :transfat, 'Transfat' %>:
+  <%= f.label :transfat, 'Transfat' %>
   <%= f.text_field :transfat %><br>
-  <%= f.label :cholesterol, 'Cholesterol' %>:
+  <%= f.label :cholesterol, 'Cholesterol' %>
   <%= f.text_field :cholesterol %><br>
-  <%= f.label :potassium, 'Potassium' %>:
+  <%= f.label :potassium, 'Potassium' %>
   <%= f.text_field :potassium %><br>
-  <%= f.label :carbs, 'Carbs' %>:
+  <%= f.label :carbs, 'Carbs' %>
   <%= f.text_field :carbs %><br>
-  <%= f.label :fiber, 'Fiber' %>:
+  <%= f.label :fiber, 'Fiber' %>
   <%= f.text_field :fiber %><br>
-  <%= f.label :sugar, 'Sugar' %>:
+  <%= f.label :sugar, 'Sugar' %>
   <%= f.text_field :sugar %><br>
-  <%= f.label :protein, 'Protein' %>:
+  <%= f.label :protein, 'Protein' %>
   <%= f.text_field :protein %><br>
-<%= f.submit %>
+<%= f.submit 'Submit', :class => 'btn btn-primary' %>
 <% end %> 

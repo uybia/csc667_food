@@ -1,6 +1,6 @@
 <h1> Search Results</h1>
 <div>
-   Or <%= link_to "add your own food", food_new_path %>
+      Can't find what you're looking for? <%= button_to "Add food item", food_new_path, class: 'btn btn-primary', :method => :get %>
 </div>
 <ul>
 <% @results.each do |food| %>
