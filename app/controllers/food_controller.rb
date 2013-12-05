@@ -43,6 +43,7 @@ class FoodController < ApplicationController
   
   def addmodal
     @item = Food.find_by_id(params[:id])
+    render :layout => false
   end
 
   def item_search
