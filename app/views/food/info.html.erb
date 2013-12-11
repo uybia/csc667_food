@@ -8,29 +8,31 @@
       <td>
         <strong>Calories</strong>   <%=@item.calories %><br>
         <strong>Total Fat</strong> 
-          <%= @item.totalfat == nil ? '0' : @item.totalfat %> <br>
+          <%= @item.totalfat == nil ? '0' : @item.totalfat %> g<br>
         Saturated 
-          <%= @item.saturated == nil ? '0' : @item.saturated %> <br>
+          <%= @item.saturated == nil ? '0' : @item.saturated %> g <br>
         Polyunsaturated 
-          <%= @item.polyunsaturated == nil ? '0' : @item.polyunsaturated %> <br>
+          <%= @item.polyunsaturated == nil ? '0' : @item.polyunsaturated %> g <br>
         Monosaturated 
-          <%= @item.monosaturated == nil ? '0' : @item.monosaturated %> <br>
+          <%= @item.monosaturated == nil ? '0' : @item.monosaturated %> g <br>
         Transfat 
-          <%= @item.transfat == nil ? '0' : @item.transfat %> <br>
+          <%= @item.transfat == nil ? '0' : @item.transfat %> g <br>
         <strong>Cholesterol</strong>
-          <%= @item.cholesterol == nil ? '0' : @item.cholesterol %> <br>
+          <%= @item.cholesterol == nil ? '0' : @item.cholesterol %> mg <br>
       </td>
       <td>
+        <strong>Sodium</strong>
+          <%= @item.sodium == nill ? '0' : @item.sodium %> mg<br>
         <strong>Potassium</strong>
-          <%= @item.potassium == nil ? '0' : @item.potassium %> <br>
+          <%= @item.potassium == nil ? '0' : @item.potassium %>  mg<br>
         <strong>Carbs</strong>
-          <%= @item.carbs == nil ? '0' : @item.carbs %> <br>
+          <%= @item.carbs == nil ? '0' : @item.carbs %> g<br>
         <strong>Fiber</strong>
-          <%= @item.fiber == nil ? '0' : @item.fiber %> <br>
+          <%= @item.fiber == nil ? '0' : @item.fiber %> g <br>
         <strong>Sugars</strong>
-          <%= @item.sugar == nil ? '0' : @item.sugar %> <br>
+          <%= @item.sugar == nil ? '0' : @item.sugar %> g <br>
         <strong>Protein</strong>
-          <%= @item.protein == nil ? '0' : @item.protein %> <br>
+          <%= @item.protein == nil ? '0' : @item.protein %> g <br>
     </tr>
   </tbody>
 </table>     
