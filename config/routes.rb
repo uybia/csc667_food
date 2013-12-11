@@ -4,8 +4,9 @@ Csc667::Application.routes.draw do
   root to: "pages#home"
  
   resources :users
-
-  resources :friendships, only: [:create]
+ 
+  resources :goals, only: [:index]
+  resources :friendships, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :grocery_lists
   resources :list_items
@@ -31,7 +32,7 @@ Csc667::Application.routes.draw do
   match '/meal/food/search/results', to: 'food#item_search', via: 'get'
   match '/calendar', to: 'calendar#index', via: 'get'
   match '/calendar/meals/', to: 'calendar#show', via: 'get'
-  
+  match '/goals/update', to: 'goals#update', via: 'post' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

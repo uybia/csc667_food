@@ -18,7 +18,7 @@ class FoodController < ApplicationController
   end
  
   def add_to_meal
-    meals = Meal.where('user_id = ?', current_user.id)
+      meals = Meal.where('user_id = ?', current_user.id)
       specific = meals.where('meal_tag = ?', params[:meal])
       @recent = specific.order("date DESC").take(5)
       fq = specific.group('food_id').count('food_id')

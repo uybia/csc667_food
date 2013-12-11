@@ -3,7 +3,7 @@
    <% if !current_user.friends.exists?(@user.id) then %>
    <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
    <% else %>
-   Friends
+   <%= link_to "Remove From Friends", friendship_path(:id => @user.id), :method => :delete %>
    <% end %>
 <% end %>
 

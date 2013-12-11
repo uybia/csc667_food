@@ -1,3 +1,7 @@
+<div>
+   <h2>Goal:</h2>
+   Daily Calories:  <%= current_user.goal.calories %> <%= link_to "Edit", "#update-goal", :data => {:toggle => "modal", :href => goals_path}, :class => "updateGoalModal" %> 
+</div>
   <div id="user-meal">
           <h3>Today's Meal</h3>
            <h5>Breakfast</h5>
@@ -23,7 +27,26 @@
       <!-- display user's friends -->
         <ul> 
 	<% for user in @user.friends %>
-        <li><%= link_to user.name, user_profile_path(:id => user.id) %></li>
+        <li><%= link_to user.name, user_profile_path(:id => user.id) %>
+    	    <%= link_to "Remove", friendship_path(user.id), :method => :delete %>
+	</li>
         <% end %>
         </ul>
     </div>
+
+
+<div class="modal fade" id="update-goal" tabindex="-1" role="dialog" aria-labelledby="updateGoalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="modalTitle">Update Goal</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div>
+   </div>
+  </div>
+</div>

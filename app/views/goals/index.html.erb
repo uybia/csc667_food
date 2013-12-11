@@ -1,0 +1,9 @@
+Current Goal: <%= current_user.goal.calories %><br/>
+Update to:
+<form action="/goals/update" method="post">
+  <div class="form-group">
+    <input id="calorie_goal" name="calorie_goal" type="text" class="form-control"/>
+  </div>
+   <button class="btn btn-primary" type="submit">Update</button>
+  
+</form>
