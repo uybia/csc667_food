@@ -14,6 +14,7 @@ Csc667::Application.routes.draw do
   match '/help',  	to: 'pages#help',		via: 'get'
   match '/signin', 	to: 'sessions#new',     	via: 'get'
   match '/signout', 	to: 'sessions#destroy',     	via: 'delete'
+  match '/user/profile', to: 'friendships#show', 		via: 'get'
   match '/meal/plan', 	to: 'meals#index', 		via: 'get'
   match '/meal/plan/type', 	to: 'meals#meal_type', 	via: 'get'
   match '/food/search',		to: 'food#search',	via: 'get'

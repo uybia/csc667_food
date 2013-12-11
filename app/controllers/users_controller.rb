@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def show
+    @user = User.find(params[:id])
+
+    if (!signed_in?)
+      redirect_to user_profile_path(:id => params[:id])
+    elsif (@user.id != current_user.id)
+      redirect_to user_profile_path(:id => params[:id])
+    end
+
     date = Time.now.strftime("%F")
     @user = User.find(params[:id])
     @meals = @user.meals.where('date = ? ', date ).group("id")
@@ -40,7 +48,6 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
 
    private
 

@@ -1,0 +1,9 @@
+<h4> <%= @user.name %> </h4>
+<% if signed_in? %>
+   <% if !current_user.friends.exists?(@user.id) then %>
+   <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
+   <% else %>
+   Friends
+   <% end %>
+<% end %>
+
