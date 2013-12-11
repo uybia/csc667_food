@@ -53,11 +53,13 @@ class FoodController < ApplicationController
   
   def create 
     food = Food.create(food_params)
-
     redirect_to food_nutritional_path(:id => food.id)
   end
 
   def show
+    if (!signed_in?)
+      redirect_to signin_path
+    end
    @food = Food.new
   end
 
