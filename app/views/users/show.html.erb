@@ -25,13 +25,14 @@
     <div id="user-friends">
       <h3>Friends</h3>
       <!-- display user's friends -->
-        <ul> 
+        <table style="width: 100%">
 	<% for user in @user.friends %>
-        <li><%= link_to user.name, user_profile_path(:id => user.id) %>
-    	    <%= link_to "Remove", friendship_path(user.id), :method => :delete %>
-	</li>
+        <tr>
+          <td style="width: 50%;"><%= link_to user.name, user_profile_path(:id => user.id) %></td>
+    	  <td style="width: 50%"><%= link_to "Remove", friendship_path(user.id), :method => :delete %></td>
+	</tr>
         <% end %>
-        </ul>
+        </table>
     </div>
 
 

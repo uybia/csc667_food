@@ -1,2 +1,2 @@
 $(document).ready(function() {
-  $("#datepicker").datepicker({format: 'mm/dd/yyyy'})});
+  $("#datepicker").datepicker({format: 'mm-dd-yyyy'})});

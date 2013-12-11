@@ -1,4 +1,9 @@
 <h4> <%= @user.name %> </h4>
+<div style="margin-bottom: 10px;">
+ <div class="pull-left">
+<%= @user.email %>
+ </div>
+ <div class="pull-right">
 <% if signed_in? %>
    <% if !current_user.friends.exists?(@user.id) then %>
    <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
@@ -6,4 +11,38 @@
    <%= link_to "Remove From Friends", friendship_path(:id => @user.id), :method => :delete %>
    <% end %>
 <% end %>
+  </div>
+</div>
+
+
+<div id="user-meal">
+          <h3>Today's Meal</h3>
+           <h5>Breakfast</h5>
+             <% if @breakfasts != nil then %>
+             <% @breakfasts.each do |meal| %>
+             <ul>
+               <li> <%= meal.food.name %> </li>
+             </ul>
+             <% end  end%>
+           <h5>Lunch</h5>
+           <% if @lunches != nil then %>
+           <% @lunches.each do |meal| %>
+           <ul><li> <%= meal.food.name %> </li></ul>
+           <% end end %>
+           <h5>Dinner</h5>
+           <% if @dinners != nil then %>
+           <% @dinners.each do |meal| %>
+<ul><li> <%= meal.food.name %> </li></ul>
+           <% end end %>
+    </div>
+    <div id="user-friends">
+      <h3>Friends</h3>
+      <!-- display user's friends -->
+        <ul>
+        <% for user in @user.friends %>
+        <li><%= link_to user.name, user_profile_path(:id => user.id) %>
+        </li>
+        <% end %>
+        </ul>
+    </div>
 

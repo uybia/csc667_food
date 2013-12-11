@@ -2,9 +2,9 @@
 
 <%= form_for :food, :url => food_create_path do |f| %>
   <%= f.label :name, 'Food Name' %>
-  <%= f.text_field :name %><br>
+  <%= f.text_field :name, :required => true %><br>
   <%= f.label :calories, 'Calories' %>
-  <%= f.text_field :calories %><br>
+  <%= f.text_field :calories, :required => true %><br>
   <%= f.label :totalfat, 'Total Fat' %>
   <%= f.text_field :totalfat %><br>
   <%= f.label :saturated, 'Saturated Fat' %>
