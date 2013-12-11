@@ -1,4 +1,7 @@
-<h1> Results </h1>
+<h3> Results </h3>
+<% if @results.empty? %>
+  No results found.
+<% end %>
 <ul>
 <% @results.each do |food| %>
  <li><%= link_to food.name, "#add-food-item", :data => {:toggle => "modal", :href => food_add_through_modal_path(:id => food.id)}, :class => "myModal" %></li>
