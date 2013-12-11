@@ -2,8 +2,15 @@
 <div>
       Can't find what you're looking for? <%= button_to "Add food item", food_new_path, class: 'btn btn-primary', :method => :get %>
 </div>
+
+<br/>
+<br/>
+
 <ul>
+<% if @results.nil? %>
+  No results found.
+<% else %>   
 <% @results.each do |food| %>
  <li><%=link_to "#{food.name}", food_nutritional_path(:id => food.id) %></li>
-<% end %>
+<% end end %>
 </ul>
