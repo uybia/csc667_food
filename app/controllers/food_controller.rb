@@ -20,13 +20,23 @@ class FoodController < ApplicationController
   def add_to_meal
       meals = Meal.where('user_id = ?', current_user.id)
       specific = meals.where('meal_tag = ?', params[:meal])
-      @recent = specific.order("date DESC").take(5)
+      foodrecent = specific.order("date DESC").pluck(:food_id).take(5)
+      @recent = Food.where(:id => foodrecent)
       fq = specific.group('food_id').count('food_id')
       fq = fq.keys.take(5)
-      @frequent = specific.where(:food_id => fq)
+      @frequent = Food.where(:id => fq)
       aq = meals.group('food_id').count('food_id')
       aq = aq.keys.take(10)
-      @all = meals.distinct.where(:food_id => aq).take(10)
+      @all = Food.where(:id => aq).take(10)
+
+
+#      @recent = specific.order("date DESC").take(5)
+#      fq = specific.group('food_id').count('food_id')
+#      fq = fq.keys.take(5)
+#      @frequent = specific.where(:food_id => fq)
+#      aq = meals.group('food_id').count('food_id')
+#      aq = aq.keys.take(10)
+#      @all = meals.distinct.where(:food_id => aq).take(10)
   end
   
   def add_item

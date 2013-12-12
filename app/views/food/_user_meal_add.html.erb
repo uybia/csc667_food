@@ -4,8 +4,8 @@
    <% recent.each do |item| %>
      <div class="radio">
        <label>
-       <input type="radio" name="food_item" value=<%= item.food.id %> >
-       <%= item.food.name %> </br>
+       <input type="radio" name="food_item" value=<%= item.id %> >
+       <%= item.name %> </br>
        </label>
              <input type="hidden" name="d" value=<%=params[:d]%> />
              <input type="hidden" name="meal" value=<%=params[:meal]%> />
@@ -20,8 +20,8 @@
    <% frequent.each do |item| %>
      <div class="radio">
        <label>
-       <input type="radio" name="food_item" value=<%= item.food.id %> >
-       <%= item.food.name %> </br>
+       <input type="radio" name="food_item" value=<%= item.id %> >
+       <%= item.name %> </br>
        </label>
              <input type="hidden" name="d" value=<%=params[:d]%> />
              <input type="hidden" name="meal" value=<%=params[:meal]%>/>
@@ -36,8 +36,8 @@
         <% allmeal.each do |item| %>
           <div class="radio">
              <label>
-             <input type="radio" name="food_item" value=<%= item.food.id %> />
-               <%= item.food.name %> </br>
+             <input type="radio" name="food_item" value=<%= item.id %> />
+               <%= item.name %> </br>
              </label>
              <input type="hidden" name="d" value=<%=params[:d]%> />
              <input type="hidden" name="meal" value=<%=params[:meal]%> />
