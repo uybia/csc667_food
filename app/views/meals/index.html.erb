@@ -1,4 +1,4 @@
-<div class="date-toggle">
+<div class="date-toggle" style="padding-top: 20px;">
   <div id="prev">
   <%= link_to "<", meal_plan_path(:date => @date.yesterday.strftime("%F")) %>
   </div>
@@ -6,12 +6,6 @@
 <div id="next">  <%= link_to ">", meal_plan_path(:date => @date.next.strftime("%F")) %>
 </div></div>
 
-<ul class="nav nav-tabs">
-  <li><a href="#default" data-toggle="tab">All</a><li>
-  <li><a href="#breakfast" data-toggle="tab">Breakfast</a></li>
-  <li><a href="#lunch" data-toggle="tab">Lunch</a></li>
-  <li><a href="#dinner" data-toggle="tab">Dinner</a></li>
-</ul>
 
-<%= render partial: 'meal_content', locals: {user: @user, meals: @meals, breakfasts: @breakfasts, lunches: @lunches, dinners: @dinners} %>
+<%= render partial: 'meal_content', locals: {user: @user, breakfasts: @breakfasts, lunches: @lunches, dinners: @dinners} %>
 

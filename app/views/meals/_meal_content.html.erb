@@ -1,14 +1,7 @@
-<div class="tab-content">
-  <div class="tab-pane active" id="default">
-    Add Food to:
-        <%= link_to "Breakfast",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")) %>
-        <%= link_to "Lunch",  meal_add_food_path(:meal => "lunch", :d => @date.strftime("%Y%m%d")) %>
-        <%= link_to "Dinner",  meal_add_food_path(:meal => "dinner", :d => @date.strftime("%Y%m%d")) %>
-
     <table class="table">
       <thead>
         <tr> <td></td>
-          <td>Meal</td> <td>Food</td>
+          <td>Food</td>
           <td>Calories</td><td>Fat (g)</td>
           <td>Carbs (g)</td><td>Protein (g)</td>
           <td>Sodium (mg)</td><td>Sugar (g)</td>
@@ -16,38 +9,12 @@
       </thead>
       <tbody>
         <% @@total = 0 %>
-        <% meals.each do |meal| %>
-        <tr>
- 	  <%if !meal.food.calories.nil? then @@total += meal.food.calories end	 %>
-          <td><%= button_to "x", {:controller => :meals, :action => 'destroy', :id=> meal.id}, class: 'btn btn-small close' , :method => :delete %></td>
-          <td><%= meal.meal_tag %> </td>
-          <td><%= meal.food.name %> </td>
-          <td><%= meal.food.calories == nil ? '0' : meal.food.calories %> </td>
-          <td><%= meal.food.totalfat == nil ? '0' : meal.food.totalfat %> </td>
-          <td><%= meal.food.carbs == nil ? '0' : meal.food.carbs %> </td>
-          <td><%= meal.food.protein == nil ? '0' : meal.food.protein %> </td>
-          <td><%= meal.food.sodium == nil ? '0' : meal.food.sodium %> </td>
-          <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
-	</tr>
-        <% end %>
-      </tbody>
-    </table> 
-  </div>
-
-  <div class="tab-pane" id="breakfast">
-        <%= link_to "Add Food",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")) %>
-    <table class="table">
-      <thead>
-        <tr>
-          <td></td> 
-          <td>Food</td>
-          <td>Calories</td><td>Fat (g)</td>
-          <td>Carbs (g)</td><td>Protein (g)</td>
-          <td>Sodium (mg)</td><td>Sugar (g)</td>
-        </tr>
-      </thead>
-      <tbody>
+        <tr> <td><h5>Breakfast</h5>
+        <%= link_to "",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")), :class => "fa fa-plus-circle", :style => "font-size: 1.5em;" %></td><td></td>
+	    <td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
         <% breakfasts.each do |meal| %>
+ 	  <%if !meal.food.calories.nil? then @@total += meal.food.calories end	 %>
         <tr>
           <td><%= button_to "x", {:controller => :meals, :action => 'destroy', :id=> meal.id}, class: 'btn btn-small close' , :method => :delete %></td>
           <td><%= meal.food.name %> </td>
@@ -59,24 +26,12 @@
           <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
-      </tbody>
-    </table> 
-  </div>
-
-
-  <div class="tab-pane" id="lunch">
-        <%= link_to "Add Food",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")) %>
-    <table class="table">
-      <thead>
-        <tr><td></td> 
-          <td>Food</td>
-          <td>Calories</td><td>Fat (g)</td>
-          <td>Carbs (g)</td><td>Protein (g)</td>
-          <td>Sodium (mg)</td><td>Sugar (g)</td>
-        </tr>
-      </thead>
-      <tbody>
+        <tr> <td><h5>Lunch</h5>
+        <%= link_to "",  meal_add_food_path(:meal => "lunch", :d => @date.strftime("%Y%m%d")), :class => "fa fa-plus-circle", :style => "font-size: 1.5em;" %></td><td></td>
+	    <td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
         <% lunches.each do |meal| %>
+ 	  <%if !meal.food.calories.nil? then @@total += meal.food.calories end	 %>
         <tr>
           <td><%= button_to "x", {:controller => :meals, :action => 'destroy', :id=> meal.id}, class: 'btn btn-small close' , :method => :delete %></td>
           <td><%= meal.food.name %> </td>
@@ -88,24 +43,12 @@
           <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
-      </tbody>
-    </table> 
-  </div>
-
-
-  <div class="tab-pane" id="dinner">
-        <%= link_to "Add Food",  meal_add_food_path(:meal => "breakfast", :d => @date.strftime("%Y%m%d")) %>
-    <table class="table">
-      <thead>
-        <tr><td></td> 
-          <td>Food</td>
-          <td>Calories</td><td>Fat (g)</td>
-          <td>Carbs (g)</td><td>Protein (g)</td>
-          <td>Sodium (mg)</td><td>Sugar (g)</td>
-        </tr>
-      </thead>
-      <tbody>
+        <tr> <td><h5>Dinner</h5>
+        <%= link_to "",  meal_add_food_path(:meal => "dinner", :d => @date.strftime("%Y%m%d")), :class => "fa fa-plus-circle", :style => "font-size: 1.5em;" %></td><td></td>
+	    <td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
         <% dinners.each do |meal| %>
+ 	  <%if !meal.food.calories.nil? then @@total += meal.food.calories end	 %>
         <tr>
           <td><%= button_to "x", {:controller => :meals, :action => 'destroy', :id=> meal.id}, class: 'btn btn-small close' , :method => :delete %></td>
           <td><%= meal.food.name %> </td>
@@ -119,12 +62,3 @@
         <% end %>
       </tbody>
     </table> 
-  </div>
-  
-        
-           <b> Total: </b>
-           <%= @@total %> <br> 
-          <strong>Remaining: </strong>
-           <% @@remaining = @user.goal.calories-@@total %>
-          <span <%= if @@remaining < 0 then "id=remaining-negative" end %> > <%= @@remaining %> </span>
-</div> <!-- end .tab-content -->
