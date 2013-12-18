@@ -1,41 +1,36 @@
 </div>
-<div class="container" id="gradient">
+<div id="home-img">
+</div>
 
-  <div id="main-carousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#main-carousel" data-slide-to="1"></li>
-    <li data-target="#main-carousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <center>
-      <%= image_tag("fruits.png") %>
-      </center>
-    </div>
-    <div class="item">
-      <center>
-      <%= image_tag("grocery.jpg") %>
-     </center>
-    </div>
-    <div class="item">
-      <center><%= image_tag("raspberry.jpg") %></center>
+<div id="home-info">
+  <div class="container">
+    <div class="row">
+      <div class="span4" style="text-align:center;">
+         <i class="fa fa-list" style="font-size: 3em;"></i><br>
+         <strong> Manage your food.</strong><br>
+         Track the foods you eat to help easy and quickly. <br>
+   Search our database that is quickly growing everyday.<br>
+      </div>
+      <div class="span4" style="text-align:center;">
+         <i class="fa fa-shopping-cart" style="font-size: 3em;"></i><br>
+         <strong>Create grocery lists</strong><br>
+         Prepare your shopping list in advance. <br>
+   Create multiple lists to cater for specific events. 
+      </div>
+      <div class="span4" style="text-align:center;">
+         <i class="fa fa-group" style="font-size: 3em;"></i><br>
+         <b>Find friends</b><br>
+         Share your progress. <br>
+         Support and motivate one another.
+      </div>
     </div>
   </div>
-  <!-- Controls -->
-  <a href="#main-carousel" data-slide="prev">
+</div>
+<%if !signed_in?%>
+<div class="container" style="padding-top:20px;">
+ <div class="row">
+  <center>Get all the benefits for FREE. <br>
+  <%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %> </center>
 
-</a>
-  <a  href="#main-carousel" data-slide="next">
-</a>
-</div>
-</div>
-<div class="container content">
-<div class="center hero-unit">
-
-  <%= link_to "Sign up now!", '/signup', class: "btn btn-large btn-primary" %>
-</div>
-<div>
+  </div>
+<% end %>
