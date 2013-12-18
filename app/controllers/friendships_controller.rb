@@ -1,4 +1,6 @@
 class FriendshipsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
     if @friendship.save
@@ -26,5 +28,24 @@ class FriendshipsController < ApplicationController
     @dinners = meals.where(meal_tag: "dinner")
 
   end
+
+  def search
+    query = prep(params[:user_name])
+    redirect_to user_search_results_path(:query => query)
+  end
+
+  def results
+   @results = User.where('name ILIKE ? AND id <> ?', params[:query], current_user.id)
+   @friends = current_user.friends
+  end
+
+  private
+  
+  def prep(query)
+    query.gsub(' ', '%')
+    query.insert(0, '%')
+    query.insert(query.length, '%')
+  end
+
 end
 
