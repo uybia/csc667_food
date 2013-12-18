@@ -60,5 +60,12 @@
           <td><%= meal.food.sugar == nil ? '0' : meal.food.sugar %> </td>
 	</tr>
         <% end %>
+
+	<tr><td><b> Total</b></td><td> <%= @@total %></td></tr>
+ 	<tr><td><b> Remaining</b></td>
+        <td> <% @remaining = @user.goal.calories - @@total %>
+   	     <span <%= if @remaining < 0 then "id=remaining-negative" end %> >
+	     <%= @remaining %></span>
       </tbody>
     </table> 
+
